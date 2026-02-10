@@ -1,8 +1,13 @@
+distance = float(input('Enter the distance between the two companies in kilometers(km): '))
+cost = (abs(distance)*5)
+is_correct = input('Is the distance correct? (YES/NO) ')
 
-company1 = float(input('Type the KM of company 1:'))
-company2 = float(input('Type the KM of company 2:'))
+if is_correct.casefold() == 'yes':
+    print(f'The delivery cost is R${cost:.2f}')
 
-print(f'The distancie between them is{abs(company1 -company2)} KM')
+elif is_correct.casefold() == 'no':
+    distance = float(input('Enter the correct distance between the two companies in km: '))
+    cost = (abs(distance)*5)
+    print(f'The delivery cost is R${cost:.2f}')
 
-cost = (abs(company1 - company2)*5)
-print(f'The delivery cost is R$({cost:.2f})')
+else:    print('Invalid input. Please enter YES or NO.')
